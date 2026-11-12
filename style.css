@@ -1,0 +1,399 @@
+/* ==========================================================================
+   Zmienne – kolor akcentu zmienisz w jednym miejscu (--accent)
+   ========================================================================== */
+:root {
+  --accent: #1d4ed8;
+  --accent-dark: #1e40af;
+  --accent-soft: #eff4ff;
+
+  --text: #1a1d23;
+  --text-muted: #5b6370;
+  --bg: #ffffff;
+  --bg-alt: #f7f8fa;
+  --border: #e4e7ec;
+
+  --radius: 12px;
+  --container: 1040px;
+  --header-height: 64px;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ==========================================================================
+   Podstawy
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+}
+
+h3 {
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 20;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Nagłówek i nawigacja
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: var(--header-height);
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.logo:hover {
+  color: var(--accent);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   Sekcje
+   ========================================================================== */
+.section {
+  padding: 88px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-intro {
+  max-width: 60ch;
+  margin-top: 12px;
+  color: var(--text-muted);
+}
+
+/* O mnie */
+.hero {
+  padding: 112px 0 96px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lead {
+  margin-top: 16px;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--text-muted);
+}
+
+.hero-text {
+  max-width: 62ch;
+  margin-top: 24px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+/* Przyciski */
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.button:hover {
+  color: #fff;
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.button-outline {
+  color: var(--accent);
+  background: transparent;
+}
+
+.button-outline:hover {
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+/* Umiejętności */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+  margin-top: 48px;
+}
+
+.skill-group h3 {
+  margin-bottom: 16px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-list li {
+  padding: 5px 14px;
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border-radius: 999px;
+}
+
+/* Projekty */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+  transform: translateY(-2px);
+}
+
+.card p {
+  flex-grow: 1;
+  margin: 12px 0 24px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.card-link {
+  align-self: flex-start;
+  font-weight: 600;
+}
+
+/* Kontakt */
+.contact {
+  text-align: center;
+}
+
+.contact .section-intro {
+  margin: 12px auto 32px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  margin-top: 32px;
+}
+
+/* Stopka */
+.site-footer {
+  padding: 28px 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ==========================================================================
+   Responsywność
+   ========================================================================== */
+@media (max-width: 860px) {
+  .skills-grid,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 96px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .nav-list {
+    gap: 0 18px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .hero {
+    padding: 64px 0;
+  }
+
+  .actions .button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
